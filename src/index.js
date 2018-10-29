@@ -1,5 +1,5 @@
 import IconProvider from './IconProvider'
-import IconContext from './IconContext'
+import { icons, IconContext } from './IconContext'
 import Icon from './Icon'
 
-export { IconProvider, IconContext, Icon }
+export { IconProvider, IconContext, Icon, icons }
