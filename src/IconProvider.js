@@ -14,4 +14,9 @@ class IconProvider extends React.Component {
   }
 }
 
+IconProvider.propTypes = {
+  icons: PropTypes.object,
+  children: PropTypes.object
+}
+
 export default IconProvider
