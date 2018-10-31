@@ -72,4 +72,4 @@ The current version of this package is only useful for displaying single path SV
 - Testing
 - Demo page
 - File Import
-- Fallback for vi
+- Fallback for viewPort
