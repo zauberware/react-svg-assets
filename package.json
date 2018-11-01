@@ -1,33 +1,39 @@
 {
-  "name": "react-svg-assets",
+  "name": "@zauberware/react-svg-assets",
   "version": "0.1.0",
-  "description": "A simple SVG asset manager.",
+  "description": "A simple SVG asset provider for React (^16.3.0) .. or better (^16.6.0).",
   "main": "build/index.js",
   "peerDependencies": {
-    "react": "^16.6.0"
+    "react": "^16.3.0"
   },
   "scripts": {
     "start": "webpack --watch",
-    "build": "webpack"
+    "build": "webpack",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/datenfips/react-svg-assets.git"
+    "url": "git+https://github.com/zauberware/react-svg-assets.git"
   },
   "keywords": [
     "react",
     "svg",
-    "assets"
+    "assets",
+    "Provider",
+    "Context API"
   ],
-  "author": "Philipp Siegmund",
-  "license": "ISC",
+  "author": "Philipp Siegmund <philipp@zauberware.com> (http://zauberware.com/)",
+  "contributors": [
+    "Simon Franzen <simon@zauberware.com> (http://zauberware.com/)"
+  ],
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/datenfips/react-svg-assets/issues"
+    "url": "https://github.com/zauberware/react-svg-assets/issues"
   },
-  "homepage": "https://github.com/datenfips/react-svg-assets#readme",
+  "homepage": "https://github.com/zauberware/react-svg-assets#readme",
   "dependencies": {
     "prop-types": "^15.6.2",
-    "react": "^16.6.0",
+    "react": "^16.3.0",
     "webpack": "^4.23.1"
   },
   "devDependencies": {

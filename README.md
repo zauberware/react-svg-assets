@@ -1,6 +1,6 @@
 ![Official SVG logo](svg-logo.png)
 # react-svg-assets
-A simple SVG asset provider for React (^16.3.0) .. or better (^16.6.0). Work in progress
+A simple SVG asset provider for React (^16.3.0) .. or better (^16.6.0). Work in progress.
 
 ## Getting Started
 
