@@ -2,6 +2,7 @@ var path = require('path');
 
 module.exports = {
   entry: './src/index.js',
+  target: 'web',
   mode: 'production',
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -20,10 +21,16 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
+      },
+      {
+        test: /\.svg$/,
+        use: {
+          loader: 'file-loader'
+        }
       }
     ]
   },
   externals: {
-    'react': 'commonjs react' 
+    'react': 'commonjs react'
   }
 };

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { IconContext } from './IconContext'
 
 class IconProvider extends React.Component {
-  
   render() {
     const { children, icons } = this.props
     return (

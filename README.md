@@ -9,29 +9,44 @@ This module depends on the **NEW Context API** as introduced in React 16.3.0. Yo
 
 ### Installation
 ```
-npm install react-svg-assets
+npm install @zauberware/react-svg-assets
 ```
 
 ### Usage
-This package comes with a predefined minimal icon set. Your SVG paths can be defined before using the Provider.
+This package does not contain an predefined icon set, so your SVGs must be defined before using the Provider.
+The icon set shall be function which returns a complete set or a single icon by name, this approach is giving us a higher flexibility when we try to display conditional or dynamic icons.
+
+You can also the withIcons HOC (Higher-Order-Component), if you need your icons outside the IconProvider or if you don't use the Provider pattern.
+
+For more conveniece 'styled-compenets' are included. You can override the theme values and inject your custom theme via props. Common use cases like 'rotate' or different sizes, can also be controlled via props.
 
 main.js
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { IconProvider } from 'react-svg-assets';
+import { IconProvider } from '@zauberware/react-svg-assets';
 import './index.css';
 import App from './App';
-
-export const myIcons = {
-  'myIcon': 'M 512 [...] -512 Z'
-}
+import myIcons from './myIcons'
 
 ReactDOM.render(
   <IconProvider icons={myIcons}>
     <App />
   </IconProvider>
   , document.getElementById('root'));
+```
+
+myIcons.js
+```javascript
+import MyIcon from './path-to-my-assets/icon.svg'
+
+export default (_icon) => {
+  const icons = {
+    'myIconName': MyIcon,
+  }
+  return _icon ? icons[_icon] : icons
+}
+
 ```
 
 App.js
@@ -43,7 +58,7 @@ class App extends Component {
   render() {
     return (
       <main>
-        <Icon width="32" height="32" color="black" icon="myIcon" viewBox="0 0 1024 1024" />
+        <Icon icon="myIconName" />
       </main>
     );
   }
@@ -58,18 +73,10 @@ Icon.propTypes
 ```javascript
 Icon.propTypes = {
   icon: PropTypes.string,
-  width: PropTypes.number,
-  height: PropTypes.number,
-  color: PropTypes.string,
-  viewBox: PropTypes.string,
+  icons: PropTypes.function,
 }
 ```
-
-### Issues
-The current version of this package is only useful for displaying single path SVGs. File import and a more-sophisticated use is planned for further releases.
 
 ### Todos
 - Testing
 - Demo page
-- File Import
-- Fallback for viewPort
