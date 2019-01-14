@@ -1,9 +1,9 @@
 const theme = {
   defaultDisplay: 'flex',
-  sizeSmall: '16px',
+  defaultSize: '16px',
+  sizeMini: '8px',
   sizeMedium: '24px',
-  sizeLarge: '32px',
-  sizeExtraLarge: '64px',
+  sizeLarge: '32px'
 }
 
 export default theme

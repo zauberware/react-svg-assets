@@ -1,11 +1,11 @@
 import React from 'react'
-import { defaultIcon } from '../assets/icon.svg'
+import defaultIcon from '../assets/letter-z.svg'
 
-export const icons = (_icon) => {
+export const icons = (icon) => {
   const icons = {
-    'default': defaultIcon
+    default: defaultIcon
   }
-  return _icon ? icons[_icon] : icons
+  return icon ? icons[icon] : icons
 }
 
 export const IconContext = React.createContext(

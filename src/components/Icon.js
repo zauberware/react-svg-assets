@@ -2,15 +2,15 @@ import React, { Fragment } from "react"
 import { isFunction } from 'lodash'
 import PropTypes from 'prop-types'
 import { withIcons } from './IconContext'
-import theme from '../styles/theme' 
+import defaultTheme from '../styles/theme' 
 import StyledIcon from '../styles/StyledIcon'
 
 class Icon extends React.Component {
   state = {
     iconsAsFunction: false,
-    theme: theme
+    theme: defaultTheme
   }
-  
+
   componentDidMount (){
     const {
       icons,
@@ -20,7 +20,7 @@ class Icon extends React.Component {
     if (isFunction(icons)){
       this.setState({ iconsAsFunction: true })
     }
-    if (theme !== 'undefined'){
+    if (theme){
       this.setState({ theme: theme })
     }
   }
@@ -28,7 +28,7 @@ class Icon extends React.Component {
   render() {
     const { icon, icons } = this.props
     const { iconsAsFunction, theme } = this.state
-    console.log(this.props)
+    console.log(theme)
     return (
       <Fragment>
         {iconsAsFunction &&
@@ -40,8 +40,8 @@ class Icon extends React.Component {
 }
 
 Icon.propTypes = {
-  icons: PropTypes.any,
-  icon: PropTypes.string,
+  icons: PropTypes.any.isRequired,
+  icon: PropTypes.string.isRequired,
 }
 
 export default withIcons(Icon)
