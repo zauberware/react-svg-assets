@@ -1,11 +1,17 @@
 ![Official SVG logo](svg-logo.png)
 # react-svg-assets
-A simple SVG asset provider for React (^16.3.0) .. or better (^16.6.0). Work in progress.
+A simple SVG asset provider for React (^16.3.0) .. or better (^16.6.0).
 
 ## Getting Started
 
+### Why?
+At our company we always start with "Why?", so why should this component be used?
+The problem we faced was that every display component we created, that contained icons in any way, had many, many imports relative to our assests. Sometimes we have apps and sites with a lot of icons in menus or as bulletpoints a.s.o.
+
+To keep your asset management in order, we created a higher-order component with context and the possibility to defined an iconset. This allows you to wrap your component with our Icon provider and you can easily use your icons wherever you need them, just by name.
+
 ### Prequisites
-This module depends on the **NEW Context API** as introduced in React 16.3.0. You can read more about the Context API in the [official documentation](https://reactjs.org/docs/context.html).
+This module depends on the **Context API** as introduced in React 16.3.0. You can read more about the Context API in the [official documentation](https://reactjs.org/docs/context.html).
 
 ### Installation
 ```

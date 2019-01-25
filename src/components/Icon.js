@@ -28,7 +28,7 @@ class Icon extends React.Component {
   render() {
     const { icon, icons } = this.props
     const { iconsAsFunction, theme } = this.state
-    console.log(theme)
+
     return (
       <Fragment>
         {iconsAsFunction &&
