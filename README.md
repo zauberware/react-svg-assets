@@ -69,7 +69,7 @@ export default (_icon) => {
 App.js
 ```javascript
 import React, { Component } from 'react';
-import { Icon } from 'react-svg-assets'
+import { Icon } from '@zauberware/react-svg-assets'
 
 class App extends Component {
   render() {
