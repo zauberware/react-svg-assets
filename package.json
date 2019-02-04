@@ -1,6 +1,6 @@
 {
   "name": "@zauberware/react-svg-assets",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "A simple SVG asset provider for React (^16.3.0) .. or better (^16.6.0).",
   "main": "dist/index.js",
   "peerDependencies": {
