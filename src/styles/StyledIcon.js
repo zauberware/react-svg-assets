@@ -4,9 +4,6 @@ const defaultSizes = ['14px', '18px', '24px', '32px']
 
 const StyledIcon = styled.img(props => css`
 
-  ${ console.log(props.theme)}
-  ${ props => console.log(props.theme)}
-
   display: ${(props.theme.icons && props.theme.icons.display) || 'flex'};
 
   width: ${props.theme.icons && props.theme.icons.sizes[0] || defaultSizes[0]};
