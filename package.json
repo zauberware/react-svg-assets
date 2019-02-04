@@ -4,7 +4,7 @@
   "description": "A simple SVG asset provider for React (^16.3.0) .. or better (^16.6.0).",
   "main": "dist/index.js",
   "peerDependencies": {
-    "styled-components": "^4.0.1"
+    "styled-components": ">=4.0.0"
   },
   "scripts": {
     "start": "webpack --watch",
