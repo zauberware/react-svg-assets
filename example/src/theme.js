@@ -1,7 +1,7 @@
 const theme = {
   icons: {
     display: 'flex',
-    sizes: ['20px', '30px', '40px', '50px']
+    sizes: ['20px', '40px', '80px', '160px']
   }
 }
 export default theme

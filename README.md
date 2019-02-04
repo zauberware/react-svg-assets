@@ -85,48 +85,51 @@ export default App;
 
 ```
 
-### PropTypes
-Icon.propTypes
-```javascript
-Icon.propTypes = {
-  icon: PropTypes.string.isRequired,
-  icons: PropTypes.function.isRequired,
-}
-```
 
 ### Basic Styles & theme
+
+Add to your theme file.
+
 theme.js
 ```javascript
 const theme = {
-  defaultDisplay: 'flex',
-  defaultSize: '16px',
-  sizeMini: '8px',
-  sizeMedium: '24px',
-  sizeLarge: '32px'
+
+  icons: {
+    display: 'flex',
+    sizes: ['14px', '18px', '24px', '32px']  
+  }
 }
 
 export default theme
 ```
 
+
+
 #### Icon properties
 ```javascript
   // rotate by degrees
-  <Icon icon={'default'} rotate='90' />
+  <Icon icon="default" rotate="90" />
 
   // add padding
-  <Icon icon={'default'} padding='5px' />
+  <Icon icon="default" padding="5px" />
   
   // change cursor to pointer
-  <Icon icon={'default'} clickable />
+  <Icon icon="default" clickable />
 
-  // default size is 16px; mini: 8px, medium: 24px, large: 32px
-  <Icon icon={'default'} mini|medium|large />
+  // default size is 18px; mini: 14px, medium: 24px, large: 32px
+  <Icon icon="default" mini|medium|large />
+
+  // render size level from theme props
+  <Icon icon="default" size={2} />
+
+  // render fixed width or height for viewport of icon
+  <Icon icon="default" width='100px' height='180px' />
 ```
+
+Have a look at our example project under `/examples`.
 
 ### Todos
 * Testing
-* Demo page
-  * a minimal example can be found in the repositories /example folder
 
 
 ### Default Icon
