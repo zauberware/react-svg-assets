@@ -3,11 +3,11 @@ const pkg = require('./package.json');
 const libraryName= pkg.name;
 
 module.exports = {
-  entry: './src/index.js',
+  entry: path.join(__dirname, "./src/index.js"),
   target: 'web',
   mode: 'production',
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.join(__dirname, './dist'),
     filename: 'index.js',
     library: libraryName,
     libraryTarget: 'commonjs2',
@@ -21,15 +21,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        include: path.resolve(__dirname, 'src'),
-        exclude: /(node_modules|dist|example)/,
+        test: /\.(js|jsx)$/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env']
           }
-        }
+        },
+        include: path.resolve(__dirname, 'src'),
+        exclude: [/node_modules/, /coverage/, /lib/, /public/, /dist/, /example/, /test/],
       },
       {
         test: /\.svg$/,
