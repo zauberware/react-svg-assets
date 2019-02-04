@@ -1,39 +1,29 @@
 import styled, { css } from 'styled-components'
 
+const defaultSizes = ['14px', '18px', '24px', '32px']
+
 const StyledIcon = styled.img(props => css`
 
-  display: ${(props.theme.icons && props.theme.icons.defaultDisplay) || 'flex'};
-  width: ${(props.theme.icons && props.theme.icons.defaultSize) || '16px'};
-  height: ${(props.theme.icons && props.theme.icons.defaultSize) || '16px'};
-  min-width: ${(props.theme.icons && props.theme.icons.defaultSize) || '16px'};
+  ${ console.log(props.theme)}
+  ${ props => console.log(props.theme)}
 
-  ${props.mini && css`
-    width: ${(props.theme.icons && props.theme.icons.sizeMini) || '8px'};
-    height: ${(props.theme.icons && props.theme.icons.sizeMini) || '8px'};
-    min-width: ${(props.theme.icons && props.theme.icons.sizeMini) || '8px'};
-  `}
+  display: ${(props.theme.icons && props.theme.icons.display) || 'flex'};
 
-  ${props.medium && css`
-    width: ${(props.theme.icons && props.theme.icons.sizeMedium) || '24px'};
-    height: ${(props.theme.icons && props.theme.icons.sizeMedium) || '24px'};
-    min-width: ${(props.theme.icons && props.theme.icons.sizeMedium) || '24px'};
-  `}
-
-  ${props.large && css`
-    width: ${(props.theme.icons && props.theme.icons.sizeLarge) || '32px'};
-    height: ${(props.theme.icons && props.theme.icons.sizeLarge) || '32px'};
-    min-width: ${(props.theme.icons && props.theme.icons.sizeLarge) || '32px'};
-  `}
+  width: ${props.theme.icons && props.theme.icons.sizes[0] || defaultSizes[0]};
+  height: ${props.theme.icons && props.theme.icons.sizes[0] || defaultSizes[0]};
+  min-width: ${props.theme.icons && props.theme.icons.sizes[0] || defaultSizes[0]};
   
-  ${props.clickable && css`
-    cursor: pointer;
+  ${props.size && css`
+    width: ${props.theme.icons && props.theme.icons.sizes[props.size] || defaultSizes[props.size]};
+    height: ${props.theme.icons && props.theme.icons.sizes[props.size] || defaultSizes[props.size]};
+    min-width: ${props.theme.icons && props.theme.icons.sizes[props.size] || defaultSizes[props.size]};
   `}
-  
-  ${props => props.padding && css`
+
+  ${props.padding && css`
     padding: ${props.padding}; 
   `}
   
-  ${props => props.rotate && css`
+  ${props.rotate && css`
     transform: rotate(${props.rotate}deg);
   `}
 `)
