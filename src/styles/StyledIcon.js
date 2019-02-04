@@ -1,27 +1,28 @@
 import styled, { css } from 'styled-components'
 
 const StyledIcon = styled.img(props => css`
-  display: ${props.theme.defaultDisplay};
-  width: ${props.theme.defaultSize};
-  height: ${props.theme.defaultSize};
-  min-width: ${props.theme.defaultSize};
+
+  display: ${(props.theme.icons && props.theme.icons.defaultDisplay) || 'flex'};
+  width: ${(props.theme.icons && props.theme.icons.defaultSize) || '16px'};
+  height: ${(props.theme.icons && props.theme.icons.defaultSize) || '16px'};
+  min-width: ${(props.theme.icons && props.theme.icons.defaultSize) || '16px'};
 
   ${props.mini && css`
-    width: ${props.theme.sizeMini};
-    height: ${props.theme.sizeMini};
-    min-width: ${props.theme.sizeMini};
+    width: ${(props.theme.icons && props.theme.icons.sizeMini) || '8px'};
+    height: ${(props.theme.icons && props.theme.icons.sizeMini) || '8px'};
+    min-width: ${(props.theme.icons && props.theme.icons.sizeMini) || '8px'};
   `}
 
   ${props.medium && css`
-    width: ${props.theme.sizeMedium};
-    height: ${props.theme.sizeMedium};
-    min-width: ${props.theme.sizeMedium};
+    width: ${(props.theme.icons && props.theme.icons.sizeMedium) || '24px'};
+    height: ${(props.theme.icons && props.theme.icons.sizeMedium) || '24px'};
+    min-width: ${(props.theme.icons && props.theme.icons.sizeMedium) || '24px'};
   `}
 
   ${props.large && css`
-    width: ${props.theme.sizeLarge};
-    height: ${props.theme.sizeLarge};
-    min-width: ${props.theme.sizeLarge};
+    width: ${(props.theme.icons && props.theme.icons.sizeLarge) || '32px'};
+    height: ${(props.theme.icons && props.theme.icons.sizeLarge) || '32px'};
+    min-width: ${(props.theme.icons && props.theme.icons.sizeLarge) || '32px'};
   `}
   
   ${props.clickable && css`
